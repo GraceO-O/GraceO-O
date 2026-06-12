@@ -301,10 +301,45 @@ h1 {
   transition: 0.3s;
 }
 
-.project-card > img.card-img-top{
+.project-card .card-img-top{
     height: 220px;
+    width: 100%;
     object-fit: cover;
 }
+
+.project-img-box{
+    height: 220px;
+    overflow: hidden;
+}
+
+/*Modal and carousel*/
+.project-img-box {
+  overflow: hidden;
+}
+
+.view-more-btn {
+  opacity: 0;
+  z-index: 3;
+  transition: 0.3s ease;
+}
+
+.project-img-box:hover .view-more-btn {
+  opacity: 1;
+}
+
+.project-img-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.project-img-box:hover::after {
+  opacity: 1;
+}
+
 
 
 .card-title {
