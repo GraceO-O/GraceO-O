@@ -7,11 +7,96 @@
 html {
   scroll-behavior: smooth;
 }
+/*--------------------------------------------------
+---------------------------------------------------------
+-
+---
+---------------------------------------------
+---------------------
 
+
+-------------------------------
+------------------------*/
 body {
   font-family: Arial, sans-serif;
-  background-color: #05070d;
   color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(circle at 15% 25%, rgba(42, 115, 255, 0.35), transparent 22%),
+    radial-gradient(circle at 85% 35%, rgba(87, 120, 255, 0.28), transparent 25%),
+    radial-gradient(circle at 20% 85%, rgba(91, 61, 255, 0.22), transparent 25%),
+    linear-gradient(135deg, #02040a, #061632, #0b1220, #02040a);
+
+  background-size: 180% 180%;
+  animation: bgMove 18s ease-in-out infinite;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(rgba(141,183,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(141,183,255,.08) 1px, transparent 1px);
+
+  background-size: 80px 80px;
+  mask-image: radial-gradient(circle, black 35%, transparent 75%);
+  animation: gridMove 25s linear infinite;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  right: -250px;
+  top: 25%;
+  pointer-events: none;
+  z-index: -1;
+
+  background: rgba(50, 105, 255, 0.22);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: glowFloat 12s ease-in-out infinite;
+}
+
+@keyframes bgMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 80px 80px;
+  }
+}
+
+@keyframes glowFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-120px, 80px);
+  }
 }
 
 section {
@@ -82,9 +167,7 @@ section {
   font-weight: 800;
 }
 
-.hero-section {
-  background: linear-gradient(135deg, #02040a, #071a3d, #000000);
-}
+
 
 .subtitle {
   color: #8db7ff;
@@ -131,15 +214,7 @@ h1 {
   color: #071a3d;
 }
 
-.intro-section,
-.education-section {
-  background-color: #071a3d;
-}
 
-.about-section,
-.contact-section {
-  background-color: #05070d;
-}
 
 .section-title {
   text-align: center;
@@ -169,7 +244,7 @@ h1 {
 
 .timeline-item {
   position: relative;
-  background: #0b1220;
+  background: rgba(11,18,32,.55);
   color: white;
 }
 
@@ -187,12 +262,15 @@ h1 {
 
 
 /*tech section*/
-.technologies-section {
-  background-color: #05070d;
-}
+
 
 .tech-category-card {
-  background-color: #0b1220;
+  background: rgba(11,18,32,.55);
+
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+
+border: 1px solid rgba(255,255,255,.12);
   color: #ffffff;
 }
 
@@ -209,8 +287,13 @@ h1 {
 .contact-form {
   padding: 30px;
   border-radius: 20px;
-  background-color: #0b1220;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(11,18,32,.55);
+
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+
+border: 1px solid rgba(255,255,255,.12);
+  
 }
 
 .section-box h2,
@@ -295,7 +378,12 @@ h1 {
   height: 100%;
   border: none;
   overflow: hidden;
-  background-color: #0b1220;
+  background: rgba(11,18,32,.55);
+
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+
+border: 1px solid rgba(255,255,255,.12);
   color: #ffffff;
   border-radius: 20px;
   transition: 0.3s;
@@ -461,4 +549,71 @@ h1 {
     width: 280px;
     height: 280px;
   }
+}
+
+
+/*For glassmorphism */
+.hero-section,
+.intro-section,
+.about-section,
+.education-section,
+.technologies-section,
+.projects-section,
+.contact-section {
+  background: transparent;
+}
+
+@keyframes navyFlow {
+
+    0% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            50% 100%,
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            20% 20%,
+            80% 30%,
+            60% 90%,
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            50% 100%,
+            0% 50%;
+    }
+}
+
+@keyframes floatGlow1{
+    0%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(100px,60px);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
+}
+
+@keyframes floatGlow2{
+    0%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(-80px,-60px);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
 }
