@@ -123,7 +123,7 @@ section {
 
 /*nav glass*/
 .custom-navbar {
-  width: 85%;
+   width: min(85%, 1200px);
   margin: 20px auto;
   border-radius: 50px;
 
@@ -169,15 +169,12 @@ section {
 
 
 
-.subtitle {
-  color: #8db7ff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700;
+.letter-spacing-2{
+    letter-spacing: 2px;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 900;
   margin-bottom: 20px;
 }
@@ -222,15 +219,9 @@ h1 {
   box-shadow: 0 0 40px rgba(141, 183, 255, 0.4);
 }
 
-.custom-btn {
-  padding: 12px 28px;
-  border: none;
-  border-radius: 30px;
-  background-color: #0d6efd;
-  font-weight: 600;
-}
 
-.custom-btn:hover {
+
+.btn:hover {
   background-color: #ffffff;
   color: #071a3d;
 }
@@ -333,16 +324,18 @@ border: 1px solid rgba(255,255,255,.12);
 .info-card:hover,
 .project-card:hover {
   transform: translateY(-8px);
+
+    box-shadow:
+        0 0 30px rgba(141,183,255,.20),
+        0 0 60px rgba(141,183,255,.10);
+
+    border-color: rgba(141,183,255,.35);
 }
 
 .project-card {
   background: #0b1220;
   border: 1px solid rgba(255, 255, 255, .08);
   transition: .3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
 }
 
 
@@ -539,9 +532,6 @@ border: 1px solid rgba(255,255,255,.12);
     border-radius: 20px;
   }
 
-  h1 {
-    font-size: 2.5rem;
-  }
 
   .profile-img {
     width: 280px;
