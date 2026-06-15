@@ -108,13 +108,9 @@ body::after {
   object-fit: contain;
 }
 
-.nav-link {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.nav-link:hover {
-  color: #8db7ff;
+.navbar .nav-link:hover {
+  color: #8db7ff !important;
+  text-decoration: underline;
 }
 
 /*nav glass*/
@@ -174,8 +170,12 @@ h1 {
 .contact-form,
 .tech-category-card,
 .project-card{
+  padding: 30px;
+  border-radius: 20px;
     background: rgba(11,18,32,.55);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(255,255,255,.12);
     border: 1px solid rgba(141,183,255,.35);
     box-shadow:
         0 0 12px rgba(141,183,255,.15),
@@ -185,6 +185,7 @@ h1 {
 .profile-img {
   width: 360px;
   height: 360px;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 50%;
   border: 8px solid #ffffff;
@@ -247,20 +248,6 @@ border: 1px solid rgba(255,255,255,.12);
   border-color: rgba(255, 255, 255, .15) !important;
 }
 
-.section-box,
-.info-card,
-.timeline-item,
-.contact-info,
-.contact-form {
-  padding: 30px;
-  border-radius: 20px;
-  background: rgba(11,18,32,.55);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid rgba(255,255,255,.12);
-  
-}
-
 .section-box h2,
 .info-card h3,
 .timeline-item h4 {
@@ -270,7 +257,6 @@ border: 1px solid rgba(255,255,255,.12);
 }
 
 .info-card {
-  height: 100%;
   transition: 0.3s;
 }
 
@@ -283,15 +269,8 @@ border: 1px solid rgba(255,255,255,.12);
     border-color: rgba(141,183,255,.35);
 }
 
-.project-subtitle {
-  color: #8db7ff;
-  font-size: .9rem;
-  font-weight: 500;
-}
-
 /*Tech Stack*/
 .project-card {
-  height: 100%;
   border: none;
   overflow: hidden;
   background: rgba(11,18,32,.55);
@@ -353,23 +332,12 @@ border: 1px solid rgba(255,255,255,.12);
 .footer-logo{
     width: 55px;
     height: 55px;
-    object-fit: cover;
-    border-radius: 50%;
     border: 2px solid rgba(255,255,255,.15);
     box-shadow: 0 0 15px rgba(141,183,255,.2);
 }
 
-.footer-nav-link{
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: .3s ease;
-}
-
 .footer-nav-link:hover{
-    color: #8db7ff;
+    color: #8db7ff !important;
 }
 
 .social-btn{
