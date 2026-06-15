@@ -21,10 +21,10 @@ background:
   linear-gradient(
     135deg,
     #02040a,
+    #051633,
+    #0f3147,
     #061632,
-    #0b1f45,
-    #061632,
-    #02040a
+    #0d1631
   );
 background-size:
   100% 100%,
@@ -110,9 +110,17 @@ body::after {
 
 .navbar .nav-link:hover {
   color: #8db7ff !important;
-  text-decoration: underline;
+}
+.nav-link {
+    border-bottom: 2px solid transparent;
+    transition: .3s ease;
 }
 
+.nav-link:hover,
+.nav-link.active {
+    color: #8db7ff !important;
+    border-bottom-color: #8db7ff;
+}
 /*nav glass*/
 .custom-navbar {
    width: min(85%, 1200px);
