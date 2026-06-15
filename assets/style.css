@@ -270,7 +270,7 @@ border: 1px solid rgba(255,255,255,.12);
 
 .info-card:hover,
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px);
     box-shadow:
         0 0 30px rgba(141,183,255,.20),
         0 0 60px rgba(141,183,255,.10);
@@ -287,7 +287,7 @@ backdrop-filter: blur(20px);
 border: 1px solid rgba(255,255,255,.12);
   color: #ffffff;
   border-radius: 20px;
-  transition: 0.3s;
+  transition: 0.1s;
 }
 
 .project-card .card-img-top {
