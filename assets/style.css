@@ -13,7 +13,7 @@ body {
   color: #ffffff;
   min-height: 100vh;
   overflow-x: hidden;
-/*-------------------------------------------------------------------------------------------------------
+/*--------STOP HERE-----------------------------------------------------------------------------------------------
 */
 background:
   radial-gradient(circle at 15% 25%, rgba(80, 120, 255, 0.12), transparent 22%),
@@ -25,7 +25,7 @@ background:
     #061632,
     #051633,
     #0a1325,
-    #02040a
+    #0c1325
   );
 background-size:
   300% 300%,
@@ -147,7 +147,7 @@ h1 {
   color: #d7dce8;
   line-height: 1.8;
 }
-/*cards to glow */
+/*cards to glow   stophere*/
 .section-box,
 .info-card,
 .timeline-item,
@@ -158,11 +158,11 @@ h1 {
   transition: transform .2s ease;
   padding: 30px;
   border-radius: 20px;
-    background: rgba(11,18,32,.55);
+    background: rgba(28,45,75,.70);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 border: 1px solid rgba(255,255,255,.12);
-    border: 1px solid rgba(141,183,255,.35);
+    border: 1px solid rgba(141,183,255,.50);
     box-shadow:
         0 0 12px rgba(141,183,255,.15),
         0 0 25px rgba(141,183,255,.08);
@@ -201,11 +201,6 @@ border: 1px solid rgba(255,255,255,.12);
   background: #8db7ff;
 }
 
-.timeline-item {
-  position: relative;
-  background: rgba(11,18,32,.55);
-  color: white;
-}
 
 .timeline-item::before {
   content: "";
@@ -220,13 +215,6 @@ border: 1px solid rgba(255,255,255,.12);
 }
 
 /*tech section*/
-.tech-category-card {
-  background: rgba(11,18,32,.55);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid rgba(255,255,255,.12);
-  color: #ffffff;
-}
 
 .tech-category-card .d-inline-flex {
   color: #ffffff;
@@ -260,7 +248,7 @@ border: 1px solid rgba(255,255,255,.12);
 .project-card {
   border: none;
   overflow: hidden;
-  background: rgba(11,18,32,.55);
+  background: rgba(17, 28, 48, 0.7);
 backdrop-filter: blur(20px);
 -webkit-backdrop-filter: blur(20px);
 border: 1px solid rgba(255,255,255,.12);
