@@ -70,3 +70,54 @@ function setActiveNavLink() {
 
 window.addEventListener("scroll", setActiveNavLink);
 window.addEventListener("load", setActiveNavLink);
+
+
+//effect typing
+const typingElements = document.querySelectorAll(".typingText");
+
+typingElements.forEach((element) => {
+
+    const text = element.dataset.text;
+    let index = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+
+        if (!isDeleting) {
+
+            element.textContent = text.substring(0, index + 1);
+            index++;
+
+            if (index === text.length) {
+
+                setTimeout(() => {
+                    isDeleting = true;
+                    typeEffect();
+                }, 3000);
+
+                return;
+            }
+
+            setTimeout(typeEffect, 110);
+
+        } else {
+
+            element.textContent = text.substring(0, index - 1);
+            index--;
+
+            if (index === 0) {
+
+                setTimeout(() => {
+                    isDeleting = false;
+                    typeEffect();
+                }, 1000);
+
+                return;
+            }
+
+            setTimeout(typeEffect, 40);
+        }
+    }
+
+    typeEffect();
+});

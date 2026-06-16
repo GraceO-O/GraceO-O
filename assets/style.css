@@ -13,21 +13,22 @@ body {
   color: #ffffff;
   min-height: 100vh;
   overflow-x: hidden;
-
+/*-------------------------------------------------------------------------------------------------------
+*/
 background:
   radial-gradient(circle at 15% 25%, rgba(80, 120, 255, 0.12), transparent 22%),
   radial-gradient(circle at 85% 35%, rgba(100, 140, 255, 0.10), transparent 25%),
   radial-gradient(circle at 20% 85%, rgba(120, 160, 255, 0.08), transparent 25%),
   linear-gradient(
     135deg,
-    #02040a,
-    #051633,
-    #0f3147,
+    #0b2130,
     #061632,
-    #0d1631
+    #051633,
+    #0a1325,
+    #02040a
   );
 background-size:
-  100% 100%,
+  300% 300%,
   100% 100%,
   100% 100%,
   300% 300%;
@@ -46,24 +47,9 @@ body::before {
     linear-gradient(rgba(141,183,255,.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(141,183,255,.08) 1px, transparent 1px);
 
-  background-size: 80px 80px;
+  background-size: 70px 70px;
   mask-image: radial-gradient(circle, black 60%, transparent 100%);
-  animation: gridMove 8s linear infinite;
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  width: 700px;
-  height: 700px;
-  right: -250px;
-  top: 25%;
-  pointer-events: none;
-  z-index: -1;
-  background: rgba(50, 105, 255, 0.22);
-  border-radius: 50%;
-  filter: blur(120px);
-  animation: glowFloat 7s ease-in-out infinite;
+  animation: gridMove 6s linear infinite;
 }
 
 @keyframes bgMove {
@@ -90,15 +76,6 @@ body::after {
   }
   to {
     background-position: 80px 80px;
-  }
-}
-
-@keyframes glowFloat {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-120px, 80px);
   }
 }
 
@@ -178,6 +155,7 @@ h1 {
 .contact-form,
 .tech-category-card,
 .project-card{
+  transition: transform .2s ease;
   padding: 30px;
   border-radius: 20px;
     background: rgba(11,18,32,.55);
@@ -265,13 +243,14 @@ border: 1px solid rgba(255,255,255,.12);
 }
 
 .info-card {
-  transition: 0.3s;
+  transition: transform .2s ease;
 }
 
 .info-card:hover,
 .project-card:hover {
-  transform: translateY(-12px);
+  transform: translateY(-20px) scale(1.02);
     box-shadow:
+       0 15px 30px rgba(0,0,0,.30),
         0 0 30px rgba(141,183,255,.20),
         0 0 60px rgba(141,183,255,.10);
     border-color: rgba(141,183,255,.35);
@@ -287,7 +266,7 @@ backdrop-filter: blur(20px);
 border: 1px solid rgba(255,255,255,.12);
   color: #ffffff;
   border-radius: 20px;
-  transition: 0.1s;
+  transition: transform .2s ease;
 }
 
 .project-card .card-img-top {
@@ -383,4 +362,16 @@ border: 1px solid rgba(255,255,255,.12);
 .reveal.active {
     opacity: 1;
     transform: translateY(0) scale(1);
+}
+
+.typing-cursor::after {
+  color: white;
+    content: "|";
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
